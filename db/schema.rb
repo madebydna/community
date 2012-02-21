@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(:version => 20120217002323) do
     t.datetime "updated_at"
   end
 
+  create_table "learning_materials", :force => true do |t|
+    t.text     "name"
+    t.text     "description"
+    t.text     "url"
+    t.text     "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pages", :force => true do |t|
     t.text     "title"
     t.text     "body"
@@ -63,6 +72,17 @@ ActiveRecord::Schema.define(:version => 20120217002323) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "protected",  :default => false, :null => false
+  end
+
+  create_table "projects", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "name",                            :null => false
+    t.text     "description"
+    t.text     "slug",                            :null => false
+    t.text     "source_url"
+    t.boolean  "core_project", :default => false, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
