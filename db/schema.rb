@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20120217002323) do
     t.boolean  "archived",                :default => false, :null => false
     t.boolean  "allow_discussion",        :default => false, :null => false
     t.text     "discussion_list_name"
+    t.datetime "deadline"
   end
 
   create_table "activity_registrations", :force => true do |t|
